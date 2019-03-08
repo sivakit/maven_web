@@ -1,4 +1,4 @@
-From tomcat:latest
+From omcat:latest
 MAINTAINER sivaece496@gmail.com
 WORKDIR /usr/local/tomcat/webapps
 COPY ./target/student.war /usr/local/tomcat/webapps
