@@ -13,25 +13,18 @@ Check the Docker logs:
 ---------------------- 
      docker logs -f {{ Container ID }}
 
-[root@ip-172-31-60-126 solution]# 
-latest: Pulling from infracloudio/csvserver
-ae43b40a9945: Pull complete
-7bb33bb2db38: Pull complete
-c82d72e1bb76: Pull complete
-Digest: sha256:20bc5a93fac217270fe5c88d639d82c6ecb18fc908283e046d9a3917a840ec1f
-Status: Downloaded newer image for infracloudio/csvserver:latest
-docker.io/infracloudio/csvserver:latest
-[root@ip-172-31-60-126 solution]# docker images
-REPOSITORY               TAG       IMAGE ID       CREATED       SIZE
-infracloudio/csvserver   latest    8cb989ef80b5   8 weeks ago   237MB
-[root@ip-172-31-60-126 solution]# docker run -itd infracloudio/csvserver:latest
-4fdfe04205cf9860485d7d9c533f0a7f1df4f7290c0ad77e33a440d52e7a1902
-[root@ip-172-31-60-126 solution]# docker ps -a
-CONTAINER ID   IMAGE                           COMMAND                  CREATED         STATUS                     PORTS     NAMES
-4fdfe04205cf   infracloudio/csvserver:latest   "/csvserver/csvserver"   5 seconds ago   Exited (1) 5 seconds ago             stoic_driscoll
-[root@ip-172-31-60-126 solution]# docker logs -f 4fdfe04205cf
-2021/05/07 02:56:54 error while reading the file "/csvserver/inputdata": open /csvserver/inputdata: no such file or directory
-[root@ip-172-31-60-126 solution]#
+Create Script to generate inputFile:
+-----------------------------------
+           
+            vi gencsv.sh
+                  #!/bin/bash
+                  RANDOM=$$
+                  for i  in `seq 10`
+                  do
+                  echo "$i, $RANDOM" >> inputFile
+                  done
+
+
 
 [root@ip-172-31-60-126 solution]# vi gencsv.sh
 [root@ip-172-31-60-126 solution]# chmod +x gencsv.sh
