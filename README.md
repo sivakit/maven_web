@@ -42,3 +42,12 @@ Stop and Remove the Container:
 Run the Conatiner with 9393 port:
 --------------------------------
             docker run -itd -v $(pwd)/inputFile:/csvserver/inputdata -p 9393:9300 infracloudio/csvserver:latest
+            
+
+Run the Conatiner with 9393 port along with Env variable:
+---------------------------------------------------------
+            docker run -itd -v $(pwd)/inputFile:/csvserver/inputdata -p 9393:9300 -e CSVSERVER_BORDER='orange' infracloudio/csvserver:latest
+            
+            
+            
+            
