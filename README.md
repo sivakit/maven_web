@@ -1,4 +1,16 @@
-[root@ip-172-31-60-126 solution]# docker pull infracloudio/csvserver:latest
+Pull The Docker Image: docker pull infracloudio/csvserver:latest
+---------------------
+
+Run Docker container: docker run -itd infracloudio/csvserver:latest
+--------------------
+
+Check docker services status: docker ps -a
+----------------------------- 
+
+Check the Docker logs: docker logs -f {{ Container ID }}
+---------------------- 
+
+[root@ip-172-31-60-126 solution]# 
 latest: Pulling from infracloudio/csvserver
 ae43b40a9945: Pull complete
 7bb33bb2db38: Pull complete
