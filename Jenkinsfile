@@ -1,8 +1,11 @@
 
 pipeline {
     agent any
-    properties {
-    pipelineTriggers([cron('H/30 * * * *')])
+    triggers {
+        upstream (
+            threshold: 'SUCCESS',
+            upstreamProjects: 'UpstreamJob\master'
+        )
     }
     stages {
         stage('build') {
