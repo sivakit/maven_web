@@ -1,9 +1,9 @@
 
 pipeline {
     agent any
- properties([
+    properties {
     pipelineTriggers([cron('H/30 * * * *')])
-])
+    }
     stages {
         stage('build') {
             steps {
