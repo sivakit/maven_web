@@ -4,7 +4,7 @@ pipeline {
     triggers {
         upstream (
             threshold: 'SUCCESS',
-            upstreamProjects: 'UpstreamJob\master'
+            upstreamProjects: 'master'
         )
     }
     stages {
