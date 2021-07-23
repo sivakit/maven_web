@@ -6,8 +6,9 @@ import groovy.json.JsonOutput;
 import groovy.json.JsonSlurper;
 pipeline {
     agent any
-    triggers {
-    }
+   triggers {
+  cron(0 9 * * 1-5)
+}
     stages {
         stage('build') {
             steps {
